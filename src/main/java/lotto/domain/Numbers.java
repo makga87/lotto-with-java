@@ -2,6 +2,7 @@ package lotto.domain;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Stream;
 
 public class Numbers {
@@ -29,5 +30,29 @@ public class Numbers {
 
 	public Stream<Number> getNumbers() {
 		return this.numbers.stream();
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (o == null || getClass() != o.getClass()) {
+			return false;
+		}
+
+		Numbers _numbers = (Numbers) o;
+
+		boolean flag = true;
+		for (Number number : numbers) {
+			flag = flag & _numbers.contain(number);
+		}
+
+		return flag;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(numbers);
 	}
 }
