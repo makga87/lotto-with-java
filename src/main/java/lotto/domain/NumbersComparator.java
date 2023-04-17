@@ -6,6 +6,13 @@ public class NumbersComparator implements Comparator<Numbers> {
 
 	private int matchingCount;
 
+	private NumbersComparator() {
+	}
+
+	public static NumbersComparator init() {
+		return new NumbersComparator();
+	}
+
 	@Override
 	public int compare(Numbers clientNumbers, Numbers winningNumbers) {
 		clientNumbers.getNumbers()
