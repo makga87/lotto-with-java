@@ -22,7 +22,7 @@ class NumbersComparatorTest {
 	@MethodSource("provideNumbers")
 	void compareTest(Numbers clientNumbers, Numbers winningNumbers, int expected) {
 
-		NumbersComparator comparator = new NumbersComparator();
+		NumbersComparator comparator = NumbersComparator.init();
 		int actual = comparator.compare(clientNumbers, winningNumbers);
 
 		assertEquals(expected, actual);
