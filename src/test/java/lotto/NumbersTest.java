@@ -2,12 +2,14 @@ package lotto;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.catchThrowable;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 class NumbersTest {
@@ -20,6 +22,24 @@ class NumbersTest {
 		assertThat(throwable).
 				isInstanceOf(IllegalArgumentException.class)
 				.hasMessageContaining("Invalid number size");
+	}
+
+	@DisplayName("지정된 번호가 로또번호리스트에 포함되어 있으면 true를, 없으면 false를 반환한다")
+	@ParameterizedTest
+	@CsvSource({
+			"1, true",
+			"2, true",
+			"3, true",
+			"4, true",
+			"5, true",
+			"6, true",
+			"7, false",
+			"8, false",
+
+	})
+	void numberContainTest(int number, boolean expected) {
+		Numbers numbers = Numbers.from(generateNumbers(6));
+		assertEquals(expected, numbers.contain(Number.from(number)));
 	}
 
 	private List<Number> generateNumbers(int size) {

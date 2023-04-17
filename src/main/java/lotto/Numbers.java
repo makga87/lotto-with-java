@@ -2,6 +2,7 @@ package lotto;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Numbers {
 
@@ -24,4 +25,11 @@ public class Numbers {
 		}
 	}
 
+	public boolean contain(Number number) {
+		return this.numbers.contains(number);
+	}
+
+	public Stream<Number> getNumbers() {
+		return this.numbers.stream();
+	}
 }
