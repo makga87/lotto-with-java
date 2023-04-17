@@ -1,4 +1,4 @@
-package lotto;
+package lotto.domain;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -9,6 +9,10 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+
+import lotto.domain.Number;
+import lotto.domain.Numbers;
+import lotto.domain.NumbersComparator;
 
 class NumbersComparatorTest {
 

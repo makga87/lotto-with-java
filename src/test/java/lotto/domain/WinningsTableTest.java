@@ -1,9 +1,11 @@
-package lotto;
+package lotto.domain;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+
+import lotto.domain.WinningsTable;
 
 class WinningsTableTest {
 

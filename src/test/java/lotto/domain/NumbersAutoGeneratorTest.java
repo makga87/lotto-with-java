@@ -1,4 +1,4 @@
-package lotto;
+package lotto.domain;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -9,6 +9,11 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+
+import lotto.domain.LottoConstants;
+import lotto.domain.Number;
+import lotto.domain.Numbers;
+import lotto.domain.NumbersAutoGenerator;
 
 class NumbersAutoGeneratorTest {
 
