@@ -4,33 +4,40 @@ import java.util.Objects;
 
 public class Number {
 
-    private int number;
+	private static final int MAX_NUMBER = 46;
+	private static final int MIN_NUMBER = 1;
 
-    private Number(int number) {
-        this.number = number;
-    }
+	private int number;
 
-    public static Number from(int number) {
-        validate(number);
-        return new Number(number);
-    }
+	private Number(int number) {
+		this.number = number;
+	}
 
-    private static void validate(int number) {
-        if (number < 1 || number > 46) {
-            throw new IllegalArgumentException("Invalid number input");
-        }
-    }
+	public static Number from(int number) {
+		validate(number);
+		return new Number(number);
+	}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Number numberObject = (Number) o;
-        return number == numberObject.number;
-    }
+	private static void validate(int number) {
+		if (number < MIN_NUMBER || number > MAX_NUMBER) {
+			throw new IllegalArgumentException("Invalid number input");
+		}
+	}
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(number);
-    }
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (o == null || getClass() != o.getClass()) {
+			return false;
+		}
+		Number numberObject = (Number) o;
+		return number == numberObject.number;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(number);
+	}
 }
