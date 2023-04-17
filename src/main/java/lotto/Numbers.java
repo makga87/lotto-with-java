@@ -6,8 +6,6 @@ import java.util.stream.Stream;
 
 public class Numbers {
 
-	private static final int NUMBER_SIZE = 6;
-
 	private List<Number> numbers;
 
 	private Numbers(List<Number> numbers) {
@@ -20,7 +18,7 @@ public class Numbers {
 	}
 
 	private static void validate(List<Number> numbers) {
-		if (numbers.size() != NUMBER_SIZE) {
+		if (numbers.size() != LottoConstants.NUMBER_SIZE) {
 			throw new IllegalArgumentException("Invalid number size");
 		}
 	}
