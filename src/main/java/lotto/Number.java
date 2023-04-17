@@ -15,6 +15,10 @@ public class Number {
 		return new Number(number);
 	}
 
+	public int getNumber() {
+		return this.number;
+	}
+
 	private static void validate(int number) {
 		if (number < LottoConstants.MIN_NUMBER || number > LottoConstants.MAX_NUMBER) {
 			throw new IllegalArgumentException("Invalid number input");
