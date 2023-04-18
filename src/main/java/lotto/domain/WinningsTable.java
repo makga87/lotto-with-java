@@ -7,7 +7,8 @@ public enum WinningsTable {
 	FIRST_PLACE(6, 2000000000),
 	SECOND_PLACE(5, 1500000),
 	THIRD_PLACE(4, 50000),
-	FORTH_PLACE(3, 5000);
+	FORTH_PLACE(3, 5000),
+	NONE(0, 0);
 
 	private int matchingCount;
 	private int money;
@@ -21,7 +22,7 @@ public enum WinningsTable {
 		return Arrays.stream(values())
 					 .filter(winningsTable -> winningsTable.matchingCount == matchingCount)
 					 .findAny()
-					 .orElseGet(null);
+					 .orElseGet(() -> WinningsTable.NONE);
 	}
 
 	public int getMoney() {
