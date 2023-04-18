@@ -2,7 +2,6 @@ package lotto.domain;
 
 public class LottoShop {
 
-	private int LOTTO_PRICE = 1000;
 
 	private LottoShop() {
 	}
@@ -11,8 +10,8 @@ public class LottoShop {
 		return new LottoShop();
 	}
 
-	public Lottos sell(int money, NumbersGenerable numbersGenerable) {
-		return Lottos.of(money / LOTTO_PRICE, numbersGenerable);
+	public Lottos sell(int count, NumbersGenerable numbersGenerable) {
+		return Lottos.of(count, numbersGenerable);
 	}
 
 }
