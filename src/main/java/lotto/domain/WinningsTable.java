@@ -28,4 +28,8 @@ public enum WinningsTable {
 	public int getMoney() {
 		return this.money;
 	}
+
+	public int getMatchingCount() {
+		return this.matchingCount;
+	}
 }
