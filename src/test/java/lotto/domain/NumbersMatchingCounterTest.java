@@ -10,20 +10,16 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import lotto.domain.Number;
-import lotto.domain.Numbers;
-import lotto.domain.NumbersComparator;
-
-class NumbersComparatorTest {
+class NumbersMatchingCounterTest {
 
 
 	@DisplayName("자동 생성 로또 번호를 비교하여, 동일한 번호 갯수 만큼 비교결과를 반환한다 ")
 	@ParameterizedTest
 	@MethodSource("provideNumbers")
-	void compareTest(Numbers clientNumbers, Numbers winningNumbers, int expected) {
+	void counterTest(Numbers clientNumbers, Numbers winningNumbers, int expected) {
 
-		NumbersComparator comparator = NumbersComparator.init();
-		int actual = comparator.compare(clientNumbers, winningNumbers);
+		NumbersMatchingCounter comparator = NumbersMatchingCounter.init();
+		int actual = comparator.count(clientNumbers, winningNumbers);
 
 		assertEquals(expected, actual);
 	}

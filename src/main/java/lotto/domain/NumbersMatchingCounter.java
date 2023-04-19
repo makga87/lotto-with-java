@@ -1,20 +1,17 @@
 package lotto.domain;
 
-import java.util.Comparator;
-
-public class NumbersComparator implements Comparator<Numbers> {
+public class NumbersMatchingCounter {
 
 	private int matchingCount;
 
-	private NumbersComparator() {
+	private NumbersMatchingCounter() {
 	}
 
-	public static NumbersComparator init() {
-		return new NumbersComparator();
+	public static NumbersMatchingCounter init() {
+		return new NumbersMatchingCounter();
 	}
 
-	@Override
-	public int compare(Numbers clientNumbers, Numbers winningNumbers) {
+	public int count(Numbers clientNumbers, Numbers winningNumbers) {
 		clientNumbers.getNumbers()
 					 .forEach(number -> plusMatchingCount(winningNumbers.contain(number)));
 		return this.matchingCount;
